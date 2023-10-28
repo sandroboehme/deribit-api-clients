@@ -89,7 +89,7 @@ export class PrivateApi {
      * @param name Name of address book entry
      * @param tfa TFA code, required when TFA is enabled for current account
      */
-    public async privateAddToAddressBookGet (currency: 'BTC' | 'ETH', type: 'transfer' | 'withdrawal', address: string, name: string, tfa?: string, options: {headers: {[name: string]: string}} = {headers: {}}) : Promise<{ response: http.ClientResponse; body: object;  }> {
+    public async privateAddToAddressBookGet (currency: 'BTC' | 'ETH', type: 'transfer' | 'withdrawal', address: string, name: string, tfa?: string, options: {headers: {[name: string]: string}} = {headers: {}}) : Promise<{ response: http.IncomingMessage; body: object;  }> {
         const localVarPath = this.basePath + '/private/add_to_address_book';
         let localVarQueryParameters: any = {};
         let localVarHeaderParams: any = (<any>Object).assign({}, this.defaultHeaders);
@@ -159,7 +159,7 @@ export class PrivateApi {
                 localVarRequestOptions.form = localVarFormParams;
             }
         }
-        return new Promise<{ response: http.ClientResponse; body: object;  }>((resolve, reject) => {
+        return new Promise<{ response: http.IncomingMessage; body: object;  }>((resolve, reject) => {
             localVarRequest(localVarRequestOptions, (error, response, body) => {
                 if (error) {
                     reject(error);
@@ -190,7 +190,7 @@ export class PrivateApi {
      * @param trigger Defines trigger type, required for &#x60;\&quot;stop_limit\&quot;&#x60; order type
      * @param advanced Advanced option order type. (Only for options)
      */
-    public async privateBuyGet (instrumentName: string, amount: number, type?: 'limit' | 'stop_limit' | 'market' | 'stop_market', label?: string, price?: number, timeInForce?: 'good_til_cancelled' | 'fill_or_kill' | 'immediate_or_cancel', maxShow?: number, postOnly?: boolean, reduceOnly?: boolean, stopPrice?: number, trigger?: 'index_price' | 'mark_price' | 'last_price', advanced?: 'usd' | 'implv', options: {headers: {[name: string]: string}} = {headers: {}}) : Promise<{ response: http.ClientResponse; body: object;  }> {
+    public async privateBuyGet (instrumentName: string, amount: number, type?: 'limit' | 'stop_limit' | 'market' | 'stop_market', label?: string, price?: number, timeInForce?: 'good_til_cancelled' | 'fill_or_kill' | 'immediate_or_cancel', maxShow?: number, postOnly?: boolean, reduceOnly?: boolean, stopPrice?: number, trigger?: 'index_price' | 'mark_price' | 'last_price', advanced?: 'usd' | 'implv', options: {headers: {[name: string]: string}} = {headers: {}}) : Promise<{ response: http.IncomingMessage; body: object;  }> {
         const localVarPath = this.basePath + '/private/buy';
         let localVarQueryParameters: any = {};
         let localVarHeaderParams: any = (<any>Object).assign({}, this.defaultHeaders);
@@ -278,7 +278,7 @@ export class PrivateApi {
                 localVarRequestOptions.form = localVarFormParams;
             }
         }
-        return new Promise<{ response: http.ClientResponse; body: object;  }>((resolve, reject) => {
+        return new Promise<{ response: http.IncomingMessage; body: object;  }>((resolve, reject) => {
             localVarRequest(localVarRequestOptions, (error, response, body) => {
                 if (error) {
                     reject(error);
@@ -300,7 +300,7 @@ export class PrivateApi {
      * @param kind Instrument kind, if not provided instruments of all kinds are considered
      * @param type Order type - limit, stop or all, default - &#x60;all&#x60;
      */
-    public async privateCancelAllByCurrencyGet (currency: 'BTC' | 'ETH', kind?: 'future' | 'option', type?: 'all' | 'limit' | 'stop', options: {headers: {[name: string]: string}} = {headers: {}}) : Promise<{ response: http.ClientResponse; body: object;  }> {
+    public async privateCancelAllByCurrencyGet (currency: 'BTC' | 'ETH', kind?: 'future' | 'option', type?: 'all' | 'limit' | 'stop', options: {headers: {[name: string]: string}} = {headers: {}}) : Promise<{ response: http.IncomingMessage; body: object;  }> {
         const localVarPath = this.basePath + '/private/cancel_all_by_currency';
         let localVarQueryParameters: any = {};
         let localVarHeaderParams: any = (<any>Object).assign({}, this.defaultHeaders);
@@ -347,7 +347,7 @@ export class PrivateApi {
                 localVarRequestOptions.form = localVarFormParams;
             }
         }
-        return new Promise<{ response: http.ClientResponse; body: object;  }>((resolve, reject) => {
+        return new Promise<{ response: http.IncomingMessage; body: object;  }>((resolve, reject) => {
             localVarRequest(localVarRequestOptions, (error, response, body) => {
                 if (error) {
                     reject(error);
@@ -368,7 +368,7 @@ export class PrivateApi {
      * @param instrumentName Instrument name
      * @param type Order type - limit, stop or all, default - &#x60;all&#x60;
      */
-    public async privateCancelAllByInstrumentGet (instrumentName: string, type?: 'all' | 'limit' | 'stop', options: {headers: {[name: string]: string}} = {headers: {}}) : Promise<{ response: http.ClientResponse; body: object;  }> {
+    public async privateCancelAllByInstrumentGet (instrumentName: string, type?: 'all' | 'limit' | 'stop', options: {headers: {[name: string]: string}} = {headers: {}}) : Promise<{ response: http.IncomingMessage; body: object;  }> {
         const localVarPath = this.basePath + '/private/cancel_all_by_instrument';
         let localVarQueryParameters: any = {};
         let localVarHeaderParams: any = (<any>Object).assign({}, this.defaultHeaders);
@@ -411,7 +411,7 @@ export class PrivateApi {
                 localVarRequestOptions.form = localVarFormParams;
             }
         }
-        return new Promise<{ response: http.ClientResponse; body: object;  }>((resolve, reject) => {
+        return new Promise<{ response: http.IncomingMessage; body: object;  }>((resolve, reject) => {
             localVarRequest(localVarRequestOptions, (error, response, body) => {
                 if (error) {
                     reject(error);
@@ -430,7 +430,7 @@ export class PrivateApi {
      * 
      * @summary This method cancels all users orders and stop orders within all currencies and instrument kinds.
      */
-    public async privateCancelAllGet (options: {headers: {[name: string]: string}} = {headers: {}}) : Promise<{ response: http.ClientResponse; body: object;  }> {
+    public async privateCancelAllGet (options: {headers: {[name: string]: string}} = {headers: {}}) : Promise<{ response: http.IncomingMessage; body: object;  }> {
         const localVarPath = this.basePath + '/private/cancel_all';
         let localVarQueryParameters: any = {};
         let localVarHeaderParams: any = (<any>Object).assign({}, this.defaultHeaders);
@@ -460,7 +460,7 @@ export class PrivateApi {
                 localVarRequestOptions.form = localVarFormParams;
             }
         }
-        return new Promise<{ response: http.ClientResponse; body: object;  }>((resolve, reject) => {
+        return new Promise<{ response: http.IncomingMessage; body: object;  }>((resolve, reject) => {
             localVarRequest(localVarRequestOptions, (error, response, body) => {
                 if (error) {
                     reject(error);
@@ -480,7 +480,7 @@ export class PrivateApi {
      * @summary Cancel an order, specified by order id
      * @param orderId The order id
      */
-    public async privateCancelGet (orderId: string, options: {headers: {[name: string]: string}} = {headers: {}}) : Promise<{ response: http.ClientResponse; body: object;  }> {
+    public async privateCancelGet (orderId: string, options: {headers: {[name: string]: string}} = {headers: {}}) : Promise<{ response: http.IncomingMessage; body: object;  }> {
         const localVarPath = this.basePath + '/private/cancel';
         let localVarQueryParameters: any = {};
         let localVarHeaderParams: any = (<any>Object).assign({}, this.defaultHeaders);
@@ -519,7 +519,7 @@ export class PrivateApi {
                 localVarRequestOptions.form = localVarFormParams;
             }
         }
-        return new Promise<{ response: http.ClientResponse; body: object;  }>((resolve, reject) => {
+        return new Promise<{ response: http.IncomingMessage; body: object;  }>((resolve, reject) => {
             localVarRequest(localVarRequestOptions, (error, response, body) => {
                 if (error) {
                     reject(error);
@@ -541,7 +541,7 @@ export class PrivateApi {
      * @param id Id of transfer
      * @param tfa TFA code, required when TFA is enabled for current account
      */
-    public async privateCancelTransferByIdGet (currency: 'BTC' | 'ETH', id: number, tfa?: string, options: {headers: {[name: string]: string}} = {headers: {}}) : Promise<{ response: http.ClientResponse; body: object;  }> {
+    public async privateCancelTransferByIdGet (currency: 'BTC' | 'ETH', id: number, tfa?: string, options: {headers: {[name: string]: string}} = {headers: {}}) : Promise<{ response: http.IncomingMessage; body: object;  }> {
         const localVarPath = this.basePath + '/private/cancel_transfer_by_id';
         let localVarQueryParameters: any = {};
         let localVarHeaderParams: any = (<any>Object).assign({}, this.defaultHeaders);
@@ -593,7 +593,7 @@ export class PrivateApi {
                 localVarRequestOptions.form = localVarFormParams;
             }
         }
-        return new Promise<{ response: http.ClientResponse; body: object;  }>((resolve, reject) => {
+        return new Promise<{ response: http.IncomingMessage; body: object;  }>((resolve, reject) => {
             localVarRequest(localVarRequestOptions, (error, response, body) => {
                 if (error) {
                     reject(error);
@@ -614,7 +614,7 @@ export class PrivateApi {
      * @param currency The currency symbol
      * @param id The withdrawal id
      */
-    public async privateCancelWithdrawalGet (currency: 'BTC' | 'ETH', id: number, options: {headers: {[name: string]: string}} = {headers: {}}) : Promise<{ response: http.ClientResponse; body: object;  }> {
+    public async privateCancelWithdrawalGet (currency: 'BTC' | 'ETH', id: number, options: {headers: {[name: string]: string}} = {headers: {}}) : Promise<{ response: http.IncomingMessage; body: object;  }> {
         const localVarPath = this.basePath + '/private/cancel_withdrawal';
         let localVarQueryParameters: any = {};
         let localVarHeaderParams: any = (<any>Object).assign({}, this.defaultHeaders);
@@ -662,7 +662,7 @@ export class PrivateApi {
                 localVarRequestOptions.form = localVarFormParams;
             }
         }
-        return new Promise<{ response: http.ClientResponse; body: object;  }>((resolve, reject) => {
+        return new Promise<{ response: http.IncomingMessage; body: object;  }>((resolve, reject) => {
             localVarRequest(localVarRequestOptions, (error, response, body) => {
                 if (error) {
                     reject(error);
@@ -683,7 +683,7 @@ export class PrivateApi {
      * @param sid The user id for the subaccount
      * @param name The new user name
      */
-    public async privateChangeSubaccountNameGet (sid: number, name: string, options: {headers: {[name: string]: string}} = {headers: {}}) : Promise<{ response: http.ClientResponse; body: object;  }> {
+    public async privateChangeSubaccountNameGet (sid: number, name: string, options: {headers: {[name: string]: string}} = {headers: {}}) : Promise<{ response: http.IncomingMessage; body: object;  }> {
         const localVarPath = this.basePath + '/private/change_subaccount_name';
         let localVarQueryParameters: any = {};
         let localVarHeaderParams: any = (<any>Object).assign({}, this.defaultHeaders);
@@ -731,7 +731,7 @@ export class PrivateApi {
                 localVarRequestOptions.form = localVarFormParams;
             }
         }
-        return new Promise<{ response: http.ClientResponse; body: object;  }>((resolve, reject) => {
+        return new Promise<{ response: http.IncomingMessage; body: object;  }>((resolve, reject) => {
             localVarRequest(localVarRequestOptions, (error, response, body) => {
                 if (error) {
                     reject(error);
@@ -753,7 +753,7 @@ export class PrivateApi {
      * @param type The order type
      * @param price Optional price for limit order.
      */
-    public async privateClosePositionGet (instrumentName: string, type: 'limit' | 'market', price?: number, options: {headers: {[name: string]: string}} = {headers: {}}) : Promise<{ response: http.ClientResponse; body: object;  }> {
+    public async privateClosePositionGet (instrumentName: string, type: 'limit' | 'market', price?: number, options: {headers: {[name: string]: string}} = {headers: {}}) : Promise<{ response: http.IncomingMessage; body: object;  }> {
         const localVarPath = this.basePath + '/private/close_position';
         let localVarQueryParameters: any = {};
         let localVarHeaderParams: any = (<any>Object).assign({}, this.defaultHeaders);
@@ -805,7 +805,7 @@ export class PrivateApi {
                 localVarRequestOptions.form = localVarFormParams;
             }
         }
-        return new Promise<{ response: http.ClientResponse; body: object;  }>((resolve, reject) => {
+        return new Promise<{ response: http.IncomingMessage; body: object;  }>((resolve, reject) => {
             localVarRequest(localVarRequestOptions, (error, response, body) => {
                 if (error) {
                     reject(error);
@@ -825,7 +825,7 @@ export class PrivateApi {
      * @summary Creates deposit address in currency
      * @param currency The currency symbol
      */
-    public async privateCreateDepositAddressGet (currency: 'BTC' | 'ETH', options: {headers: {[name: string]: string}} = {headers: {}}) : Promise<{ response: http.ClientResponse; body: object;  }> {
+    public async privateCreateDepositAddressGet (currency: 'BTC' | 'ETH', options: {headers: {[name: string]: string}} = {headers: {}}) : Promise<{ response: http.IncomingMessage; body: object;  }> {
         const localVarPath = this.basePath + '/private/create_deposit_address';
         let localVarQueryParameters: any = {};
         let localVarHeaderParams: any = (<any>Object).assign({}, this.defaultHeaders);
@@ -864,7 +864,7 @@ export class PrivateApi {
                 localVarRequestOptions.form = localVarFormParams;
             }
         }
-        return new Promise<{ response: http.ClientResponse; body: object;  }>((resolve, reject) => {
+        return new Promise<{ response: http.IncomingMessage; body: object;  }>((resolve, reject) => {
             localVarRequest(localVarRequestOptions, (error, response, body) => {
                 if (error) {
                     reject(error);
@@ -883,7 +883,7 @@ export class PrivateApi {
      * 
      * @summary Create a new subaccount
      */
-    public async privateCreateSubaccountGet (options: {headers: {[name: string]: string}} = {headers: {}}) : Promise<{ response: http.ClientResponse; body: object;  }> {
+    public async privateCreateSubaccountGet (options: {headers: {[name: string]: string}} = {headers: {}}) : Promise<{ response: http.IncomingMessage; body: object;  }> {
         const localVarPath = this.basePath + '/private/create_subaccount';
         let localVarQueryParameters: any = {};
         let localVarHeaderParams: any = (<any>Object).assign({}, this.defaultHeaders);
@@ -913,7 +913,7 @@ export class PrivateApi {
                 localVarRequestOptions.form = localVarFormParams;
             }
         }
-        return new Promise<{ response: http.ClientResponse; body: object;  }>((resolve, reject) => {
+        return new Promise<{ response: http.IncomingMessage; body: object;  }>((resolve, reject) => {
             localVarRequest(localVarRequestOptions, (error, response, body) => {
                 if (error) {
                     reject(error);
@@ -933,7 +933,7 @@ export class PrivateApi {
      * @summary Disable two factor authentication for a subaccount.
      * @param sid The user id for the subaccount
      */
-    public async privateDisableTfaForSubaccountGet (sid: number, options: {headers: {[name: string]: string}} = {headers: {}}) : Promise<{ response: http.ClientResponse; body: object;  }> {
+    public async privateDisableTfaForSubaccountGet (sid: number, options: {headers: {[name: string]: string}} = {headers: {}}) : Promise<{ response: http.IncomingMessage; body: object;  }> {
         const localVarPath = this.basePath + '/private/disable_tfa_for_subaccount';
         let localVarQueryParameters: any = {};
         let localVarHeaderParams: any = (<any>Object).assign({}, this.defaultHeaders);
@@ -972,7 +972,7 @@ export class PrivateApi {
                 localVarRequestOptions.form = localVarFormParams;
             }
         }
-        return new Promise<{ response: http.ClientResponse; body: object;  }>((resolve, reject) => {
+        return new Promise<{ response: http.IncomingMessage; body: object;  }>((resolve, reject) => {
             localVarRequest(localVarRequestOptions, (error, response, body) => {
                 if (error) {
                     reject(error);
@@ -993,7 +993,7 @@ export class PrivateApi {
      * @param password The password for the subaccount
      * @param code One time recovery code
      */
-    public async privateDisableTfaWithRecoveryCodeGet (password: string, code: string, options: {headers: {[name: string]: string}} = {headers: {}}) : Promise<{ response: http.ClientResponse; body: object;  }> {
+    public async privateDisableTfaWithRecoveryCodeGet (password: string, code: string, options: {headers: {[name: string]: string}} = {headers: {}}) : Promise<{ response: http.IncomingMessage; body: object;  }> {
         const localVarPath = this.basePath + '/private/disable_tfa_with_recovery_code';
         let localVarQueryParameters: any = {};
         let localVarHeaderParams: any = (<any>Object).assign({}, this.defaultHeaders);
@@ -1041,7 +1041,7 @@ export class PrivateApi {
                 localVarRequestOptions.form = localVarFormParams;
             }
         }
-        return new Promise<{ response: http.ClientResponse; body: object;  }>((resolve, reject) => {
+        return new Promise<{ response: http.IncomingMessage; body: object;  }>((resolve, reject) => {
             localVarRequest(localVarRequestOptions, (error, response, body) => {
                 if (error) {
                     reject(error);
@@ -1066,7 +1066,7 @@ export class PrivateApi {
      * @param advanced Advanced option order type. If you have posted an advanced option order, it is necessary to re-supply this parameter when editing it (Only for options)
      * @param stopPrice Stop price, required for stop limit orders (Only for stop orders)
      */
-    public async privateEditGet (orderId: string, amount: number, price: number, postOnly?: boolean, advanced?: 'usd' | 'implv', stopPrice?: number, options: {headers: {[name: string]: string}} = {headers: {}}) : Promise<{ response: http.ClientResponse; body: object;  }> {
+    public async privateEditGet (orderId: string, amount: number, price: number, postOnly?: boolean, advanced?: 'usd' | 'implv', stopPrice?: number, options: {headers: {[name: string]: string}} = {headers: {}}) : Promise<{ response: http.IncomingMessage; body: object;  }> {
         const localVarPath = this.basePath + '/private/edit';
         let localVarQueryParameters: any = {};
         let localVarHeaderParams: any = (<any>Object).assign({}, this.defaultHeaders);
@@ -1135,7 +1135,7 @@ export class PrivateApi {
                 localVarRequestOptions.form = localVarFormParams;
             }
         }
-        return new Promise<{ response: http.ClientResponse; body: object;  }>((resolve, reject) => {
+        return new Promise<{ response: http.IncomingMessage; body: object;  }>((resolve, reject) => {
             localVarRequest(localVarRequestOptions, (error, response, body) => {
                 if (error) {
                     reject(error);
@@ -1156,7 +1156,7 @@ export class PrivateApi {
      * @param currency The currency symbol
      * @param extended Include additional fields
      */
-    public async privateGetAccountSummaryGet (currency: 'BTC' | 'ETH', extended?: boolean, options: {headers: {[name: string]: string}} = {headers: {}}) : Promise<{ response: http.ClientResponse; body: object;  }> {
+    public async privateGetAccountSummaryGet (currency: 'BTC' | 'ETH', extended?: boolean, options: {headers: {[name: string]: string}} = {headers: {}}) : Promise<{ response: http.IncomingMessage; body: object;  }> {
         const localVarPath = this.basePath + '/private/get_account_summary';
         let localVarQueryParameters: any = {};
         let localVarHeaderParams: any = (<any>Object).assign({}, this.defaultHeaders);
@@ -1199,7 +1199,7 @@ export class PrivateApi {
                 localVarRequestOptions.form = localVarFormParams;
             }
         }
-        return new Promise<{ response: http.ClientResponse; body: object;  }>((resolve, reject) => {
+        return new Promise<{ response: http.IncomingMessage; body: object;  }>((resolve, reject) => {
             localVarRequest(localVarRequestOptions, (error, response, body) => {
                 if (error) {
                     reject(error);
@@ -1220,7 +1220,7 @@ export class PrivateApi {
      * @param currency The currency symbol
      * @param type Address book type
      */
-    public async privateGetAddressBookGet (currency: 'BTC' | 'ETH', type: 'transfer' | 'withdrawal', options: {headers: {[name: string]: string}} = {headers: {}}) : Promise<{ response: http.ClientResponse; body: object;  }> {
+    public async privateGetAddressBookGet (currency: 'BTC' | 'ETH', type: 'transfer' | 'withdrawal', options: {headers: {[name: string]: string}} = {headers: {}}) : Promise<{ response: http.IncomingMessage; body: object;  }> {
         const localVarPath = this.basePath + '/private/get_address_book';
         let localVarQueryParameters: any = {};
         let localVarHeaderParams: any = (<any>Object).assign({}, this.defaultHeaders);
@@ -1268,7 +1268,7 @@ export class PrivateApi {
                 localVarRequestOptions.form = localVarFormParams;
             }
         }
-        return new Promise<{ response: http.ClientResponse; body: object;  }>((resolve, reject) => {
+        return new Promise<{ response: http.IncomingMessage; body: object;  }>((resolve, reject) => {
             localVarRequest(localVarRequestOptions, (error, response, body) => {
                 if (error) {
                     reject(error);
@@ -1288,7 +1288,7 @@ export class PrivateApi {
      * @summary Retrieve deposit address for currency
      * @param currency The currency symbol
      */
-    public async privateGetCurrentDepositAddressGet (currency: 'BTC' | 'ETH', options: {headers: {[name: string]: string}} = {headers: {}}) : Promise<{ response: http.ClientResponse; body: object;  }> {
+    public async privateGetCurrentDepositAddressGet (currency: 'BTC' | 'ETH', options: {headers: {[name: string]: string}} = {headers: {}}) : Promise<{ response: http.IncomingMessage; body: object;  }> {
         const localVarPath = this.basePath + '/private/get_current_deposit_address';
         let localVarQueryParameters: any = {};
         let localVarHeaderParams: any = (<any>Object).assign({}, this.defaultHeaders);
@@ -1327,7 +1327,7 @@ export class PrivateApi {
                 localVarRequestOptions.form = localVarFormParams;
             }
         }
-        return new Promise<{ response: http.ClientResponse; body: object;  }>((resolve, reject) => {
+        return new Promise<{ response: http.IncomingMessage; body: object;  }>((resolve, reject) => {
             localVarRequest(localVarRequestOptions, (error, response, body) => {
                 if (error) {
                     reject(error);
@@ -1349,7 +1349,7 @@ export class PrivateApi {
      * @param count Number of requested items, default - &#x60;10&#x60;
      * @param offset The offset for pagination, default - &#x60;0&#x60;
      */
-    public async privateGetDepositsGet (currency: 'BTC' | 'ETH', count?: number, offset?: number, options: {headers: {[name: string]: string}} = {headers: {}}) : Promise<{ response: http.ClientResponse; body: object;  }> {
+    public async privateGetDepositsGet (currency: 'BTC' | 'ETH', count?: number, offset?: number, options: {headers: {[name: string]: string}} = {headers: {}}) : Promise<{ response: http.IncomingMessage; body: object;  }> {
         const localVarPath = this.basePath + '/private/get_deposits';
         let localVarQueryParameters: any = {};
         let localVarHeaderParams: any = (<any>Object).assign({}, this.defaultHeaders);
@@ -1396,7 +1396,7 @@ export class PrivateApi {
                 localVarRequestOptions.form = localVarFormParams;
             }
         }
-        return new Promise<{ response: http.ClientResponse; body: object;  }>((resolve, reject) => {
+        return new Promise<{ response: http.IncomingMessage; body: object;  }>((resolve, reject) => {
             localVarRequest(localVarRequestOptions, (error, response, body) => {
                 if (error) {
                     reject(error);
@@ -1415,7 +1415,7 @@ export class PrivateApi {
      * 
      * @summary Retrieves the language to be used for emails.
      */
-    public async privateGetEmailLanguageGet (options: {headers: {[name: string]: string}} = {headers: {}}) : Promise<{ response: http.ClientResponse; body: object;  }> {
+    public async privateGetEmailLanguageGet (options: {headers: {[name: string]: string}} = {headers: {}}) : Promise<{ response: http.IncomingMessage; body: object;  }> {
         const localVarPath = this.basePath + '/private/get_email_language';
         let localVarQueryParameters: any = {};
         let localVarHeaderParams: any = (<any>Object).assign({}, this.defaultHeaders);
@@ -1445,7 +1445,7 @@ export class PrivateApi {
                 localVarRequestOptions.form = localVarFormParams;
             }
         }
-        return new Promise<{ response: http.ClientResponse; body: object;  }>((resolve, reject) => {
+        return new Promise<{ response: http.IncomingMessage; body: object;  }>((resolve, reject) => {
             localVarRequest(localVarRequestOptions, (error, response, body) => {
                 if (error) {
                     reject(error);
@@ -1467,7 +1467,7 @@ export class PrivateApi {
      * @param amount Amount, integer for future, float for option. For perpetual and futures the amount is in USD units, for options it is amount of corresponding cryptocurrency contracts, e.g., BTC or ETH.
      * @param price Price
      */
-    public async privateGetMarginsGet (instrumentName: string, amount: number, price: number, options: {headers: {[name: string]: string}} = {headers: {}}) : Promise<{ response: http.ClientResponse; body: object;  }> {
+    public async privateGetMarginsGet (instrumentName: string, amount: number, price: number, options: {headers: {[name: string]: string}} = {headers: {}}) : Promise<{ response: http.IncomingMessage; body: object;  }> {
         const localVarPath = this.basePath + '/private/get_margins';
         let localVarQueryParameters: any = {};
         let localVarHeaderParams: any = (<any>Object).assign({}, this.defaultHeaders);
@@ -1524,7 +1524,7 @@ export class PrivateApi {
                 localVarRequestOptions.form = localVarFormParams;
             }
         }
-        return new Promise<{ response: http.ClientResponse; body: object;  }>((resolve, reject) => {
+        return new Promise<{ response: http.IncomingMessage; body: object;  }>((resolve, reject) => {
             localVarRequest(localVarRequestOptions, (error, response, body) => {
                 if (error) {
                     reject(error);
@@ -1543,7 +1543,7 @@ export class PrivateApi {
      * 
      * @summary Retrieves announcements that have not been marked read by the user.
      */
-    public async privateGetNewAnnouncementsGet (options: {headers: {[name: string]: string}} = {headers: {}}) : Promise<{ response: http.ClientResponse; body: object;  }> {
+    public async privateGetNewAnnouncementsGet (options: {headers: {[name: string]: string}} = {headers: {}}) : Promise<{ response: http.IncomingMessage; body: object;  }> {
         const localVarPath = this.basePath + '/private/get_new_announcements';
         let localVarQueryParameters: any = {};
         let localVarHeaderParams: any = (<any>Object).assign({}, this.defaultHeaders);
@@ -1573,7 +1573,7 @@ export class PrivateApi {
                 localVarRequestOptions.form = localVarFormParams;
             }
         }
-        return new Promise<{ response: http.ClientResponse; body: object;  }>((resolve, reject) => {
+        return new Promise<{ response: http.IncomingMessage; body: object;  }>((resolve, reject) => {
             localVarRequest(localVarRequestOptions, (error, response, body) => {
                 if (error) {
                     reject(error);
@@ -1595,7 +1595,7 @@ export class PrivateApi {
      * @param kind Instrument kind, if not provided instruments of all kinds are considered
      * @param type Order type, default - &#x60;all&#x60;
      */
-    public async privateGetOpenOrdersByCurrencyGet (currency: 'BTC' | 'ETH', kind?: 'future' | 'option', type?: 'all' | 'limit' | 'stop_all' | 'stop_limit' | 'stop_market', options: {headers: {[name: string]: string}} = {headers: {}}) : Promise<{ response: http.ClientResponse; body: object;  }> {
+    public async privateGetOpenOrdersByCurrencyGet (currency: 'BTC' | 'ETH', kind?: 'future' | 'option', type?: 'all' | 'limit' | 'stop_all' | 'stop_limit' | 'stop_market', options: {headers: {[name: string]: string}} = {headers: {}}) : Promise<{ response: http.IncomingMessage; body: object;  }> {
         const localVarPath = this.basePath + '/private/get_open_orders_by_currency';
         let localVarQueryParameters: any = {};
         let localVarHeaderParams: any = (<any>Object).assign({}, this.defaultHeaders);
@@ -1642,7 +1642,7 @@ export class PrivateApi {
                 localVarRequestOptions.form = localVarFormParams;
             }
         }
-        return new Promise<{ response: http.ClientResponse; body: object;  }>((resolve, reject) => {
+        return new Promise<{ response: http.IncomingMessage; body: object;  }>((resolve, reject) => {
             localVarRequest(localVarRequestOptions, (error, response, body) => {
                 if (error) {
                     reject(error);
@@ -1663,7 +1663,7 @@ export class PrivateApi {
      * @param instrumentName Instrument name
      * @param type Order type, default - &#x60;all&#x60;
      */
-    public async privateGetOpenOrdersByInstrumentGet (instrumentName: string, type?: 'all' | 'limit' | 'stop_all' | 'stop_limit' | 'stop_market', options: {headers: {[name: string]: string}} = {headers: {}}) : Promise<{ response: http.ClientResponse; body: object;  }> {
+    public async privateGetOpenOrdersByInstrumentGet (instrumentName: string, type?: 'all' | 'limit' | 'stop_all' | 'stop_limit' | 'stop_market', options: {headers: {[name: string]: string}} = {headers: {}}) : Promise<{ response: http.IncomingMessage; body: object;  }> {
         const localVarPath = this.basePath + '/private/get_open_orders_by_instrument';
         let localVarQueryParameters: any = {};
         let localVarHeaderParams: any = (<any>Object).assign({}, this.defaultHeaders);
@@ -1706,7 +1706,7 @@ export class PrivateApi {
                 localVarRequestOptions.form = localVarFormParams;
             }
         }
-        return new Promise<{ response: http.ClientResponse; body: object;  }>((resolve, reject) => {
+        return new Promise<{ response: http.IncomingMessage; body: object;  }>((resolve, reject) => {
             localVarRequest(localVarRequestOptions, (error, response, body) => {
                 if (error) {
                     reject(error);
@@ -1731,7 +1731,7 @@ export class PrivateApi {
      * @param includeOld Include in result orders older than 2 days, default - &#x60;false&#x60;
      * @param includeUnfilled Include in result fully unfilled closed orders, default - &#x60;false&#x60;
      */
-    public async privateGetOrderHistoryByCurrencyGet (currency: 'BTC' | 'ETH', kind?: 'future' | 'option', count?: number, offset?: number, includeOld?: boolean, includeUnfilled?: boolean, options: {headers: {[name: string]: string}} = {headers: {}}) : Promise<{ response: http.ClientResponse; body: object;  }> {
+    public async privateGetOrderHistoryByCurrencyGet (currency: 'BTC' | 'ETH', kind?: 'future' | 'option', count?: number, offset?: number, includeOld?: boolean, includeUnfilled?: boolean, options: {headers: {[name: string]: string}} = {headers: {}}) : Promise<{ response: http.IncomingMessage; body: object;  }> {
         const localVarPath = this.basePath + '/private/get_order_history_by_currency';
         let localVarQueryParameters: any = {};
         let localVarHeaderParams: any = (<any>Object).assign({}, this.defaultHeaders);
@@ -1790,7 +1790,7 @@ export class PrivateApi {
                 localVarRequestOptions.form = localVarFormParams;
             }
         }
-        return new Promise<{ response: http.ClientResponse; body: object;  }>((resolve, reject) => {
+        return new Promise<{ response: http.IncomingMessage; body: object;  }>((resolve, reject) => {
             localVarRequest(localVarRequestOptions, (error, response, body) => {
                 if (error) {
                     reject(error);
@@ -1814,7 +1814,7 @@ export class PrivateApi {
      * @param includeOld Include in result orders older than 2 days, default - &#x60;false&#x60;
      * @param includeUnfilled Include in result fully unfilled closed orders, default - &#x60;false&#x60;
      */
-    public async privateGetOrderHistoryByInstrumentGet (instrumentName: string, count?: number, offset?: number, includeOld?: boolean, includeUnfilled?: boolean, options: {headers: {[name: string]: string}} = {headers: {}}) : Promise<{ response: http.ClientResponse; body: object;  }> {
+    public async privateGetOrderHistoryByInstrumentGet (instrumentName: string, count?: number, offset?: number, includeOld?: boolean, includeUnfilled?: boolean, options: {headers: {[name: string]: string}} = {headers: {}}) : Promise<{ response: http.IncomingMessage; body: object;  }> {
         const localVarPath = this.basePath + '/private/get_order_history_by_instrument';
         let localVarQueryParameters: any = {};
         let localVarHeaderParams: any = (<any>Object).assign({}, this.defaultHeaders);
@@ -1869,7 +1869,7 @@ export class PrivateApi {
                 localVarRequestOptions.form = localVarFormParams;
             }
         }
-        return new Promise<{ response: http.ClientResponse; body: object;  }>((resolve, reject) => {
+        return new Promise<{ response: http.IncomingMessage; body: object;  }>((resolve, reject) => {
             localVarRequest(localVarRequestOptions, (error, response, body) => {
                 if (error) {
                     reject(error);
@@ -1889,7 +1889,7 @@ export class PrivateApi {
      * @summary Retrieves initial margins of given orders
      * @param ids Ids of orders
      */
-    public async privateGetOrderMarginByIdsGet (ids: Array<string>, options: {headers: {[name: string]: string}} = {headers: {}}) : Promise<{ response: http.ClientResponse; body: object;  }> {
+    public async privateGetOrderMarginByIdsGet (ids: Array<string>, options: {headers: {[name: string]: string}} = {headers: {}}) : Promise<{ response: http.IncomingMessage; body: object;  }> {
         const localVarPath = this.basePath + '/private/get_order_margin_by_ids';
         let localVarQueryParameters: any = {};
         let localVarHeaderParams: any = (<any>Object).assign({}, this.defaultHeaders);
@@ -1928,7 +1928,7 @@ export class PrivateApi {
                 localVarRequestOptions.form = localVarFormParams;
             }
         }
-        return new Promise<{ response: http.ClientResponse; body: object;  }>((resolve, reject) => {
+        return new Promise<{ response: http.IncomingMessage; body: object;  }>((resolve, reject) => {
             localVarRequest(localVarRequestOptions, (error, response, body) => {
                 if (error) {
                     reject(error);
@@ -1948,7 +1948,7 @@ export class PrivateApi {
      * @summary Retrieve the current state of an order.
      * @param orderId The order id
      */
-    public async privateGetOrderStateGet (orderId: string, options: {headers: {[name: string]: string}} = {headers: {}}) : Promise<{ response: http.ClientResponse; body: object;  }> {
+    public async privateGetOrderStateGet (orderId: string, options: {headers: {[name: string]: string}} = {headers: {}}) : Promise<{ response: http.IncomingMessage; body: object;  }> {
         const localVarPath = this.basePath + '/private/get_order_state';
         let localVarQueryParameters: any = {};
         let localVarHeaderParams: any = (<any>Object).assign({}, this.defaultHeaders);
@@ -1987,7 +1987,7 @@ export class PrivateApi {
                 localVarRequestOptions.form = localVarFormParams;
             }
         }
-        return new Promise<{ response: http.ClientResponse; body: object;  }>((resolve, reject) => {
+        return new Promise<{ response: http.IncomingMessage; body: object;  }>((resolve, reject) => {
             localVarRequest(localVarRequestOptions, (error, response, body) => {
                 if (error) {
                     reject(error);
@@ -2007,7 +2007,7 @@ export class PrivateApi {
      * @summary Retrieve user position.
      * @param instrumentName Instrument name
      */
-    public async privateGetPositionGet (instrumentName: string, options: {headers: {[name: string]: string}} = {headers: {}}) : Promise<{ response: http.ClientResponse; body: object;  }> {
+    public async privateGetPositionGet (instrumentName: string, options: {headers: {[name: string]: string}} = {headers: {}}) : Promise<{ response: http.IncomingMessage; body: object;  }> {
         const localVarPath = this.basePath + '/private/get_position';
         let localVarQueryParameters: any = {};
         let localVarHeaderParams: any = (<any>Object).assign({}, this.defaultHeaders);
@@ -2046,7 +2046,7 @@ export class PrivateApi {
                 localVarRequestOptions.form = localVarFormParams;
             }
         }
-        return new Promise<{ response: http.ClientResponse; body: object;  }>((resolve, reject) => {
+        return new Promise<{ response: http.IncomingMessage; body: object;  }>((resolve, reject) => {
             localVarRequest(localVarRequestOptions, (error, response, body) => {
                 if (error) {
                     reject(error);
@@ -2067,7 +2067,7 @@ export class PrivateApi {
      * @param currency 
      * @param kind Kind filter on positions
      */
-    public async privateGetPositionsGet (currency: 'BTC' | 'ETH', kind?: 'future' | 'option', options: {headers: {[name: string]: string}} = {headers: {}}) : Promise<{ response: http.ClientResponse; body: object;  }> {
+    public async privateGetPositionsGet (currency: 'BTC' | 'ETH', kind?: 'future' | 'option', options: {headers: {[name: string]: string}} = {headers: {}}) : Promise<{ response: http.IncomingMessage; body: object;  }> {
         const localVarPath = this.basePath + '/private/get_positions';
         let localVarQueryParameters: any = {};
         let localVarHeaderParams: any = (<any>Object).assign({}, this.defaultHeaders);
@@ -2110,7 +2110,7 @@ export class PrivateApi {
                 localVarRequestOptions.form = localVarFormParams;
             }
         }
-        return new Promise<{ response: http.ClientResponse; body: object;  }>((resolve, reject) => {
+        return new Promise<{ response: http.IncomingMessage; body: object;  }>((resolve, reject) => {
             localVarRequest(localVarRequestOptions, (error, response, body) => {
                 if (error) {
                     reject(error);
@@ -2132,7 +2132,7 @@ export class PrivateApi {
      * @param type Settlement type
      * @param count Number of requested items, default - &#x60;20&#x60;
      */
-    public async privateGetSettlementHistoryByCurrencyGet (currency: 'BTC' | 'ETH', type?: 'settlement' | 'delivery' | 'bankruptcy', count?: number, options: {headers: {[name: string]: string}} = {headers: {}}) : Promise<{ response: http.ClientResponse; body: object;  }> {
+    public async privateGetSettlementHistoryByCurrencyGet (currency: 'BTC' | 'ETH', type?: 'settlement' | 'delivery' | 'bankruptcy', count?: number, options: {headers: {[name: string]: string}} = {headers: {}}) : Promise<{ response: http.IncomingMessage; body: object;  }> {
         const localVarPath = this.basePath + '/private/get_settlement_history_by_currency';
         let localVarQueryParameters: any = {};
         let localVarHeaderParams: any = (<any>Object).assign({}, this.defaultHeaders);
@@ -2179,7 +2179,7 @@ export class PrivateApi {
                 localVarRequestOptions.form = localVarFormParams;
             }
         }
-        return new Promise<{ response: http.ClientResponse; body: object;  }>((resolve, reject) => {
+        return new Promise<{ response: http.IncomingMessage; body: object;  }>((resolve, reject) => {
             localVarRequest(localVarRequestOptions, (error, response, body) => {
                 if (error) {
                     reject(error);
@@ -2201,7 +2201,7 @@ export class PrivateApi {
      * @param type Settlement type
      * @param count Number of requested items, default - &#x60;20&#x60;
      */
-    public async privateGetSettlementHistoryByInstrumentGet (instrumentName: string, type?: 'settlement' | 'delivery' | 'bankruptcy', count?: number, options: {headers: {[name: string]: string}} = {headers: {}}) : Promise<{ response: http.ClientResponse; body: object;  }> {
+    public async privateGetSettlementHistoryByInstrumentGet (instrumentName: string, type?: 'settlement' | 'delivery' | 'bankruptcy', count?: number, options: {headers: {[name: string]: string}} = {headers: {}}) : Promise<{ response: http.IncomingMessage; body: object;  }> {
         const localVarPath = this.basePath + '/private/get_settlement_history_by_instrument';
         let localVarQueryParameters: any = {};
         let localVarHeaderParams: any = (<any>Object).assign({}, this.defaultHeaders);
@@ -2248,7 +2248,7 @@ export class PrivateApi {
                 localVarRequestOptions.form = localVarFormParams;
             }
         }
-        return new Promise<{ response: http.ClientResponse; body: object;  }>((resolve, reject) => {
+        return new Promise<{ response: http.IncomingMessage; body: object;  }>((resolve, reject) => {
             localVarRequest(localVarRequestOptions, (error, response, body) => {
                 if (error) {
                     reject(error);
@@ -2268,7 +2268,7 @@ export class PrivateApi {
      * @summary Get information about subaccounts
      * @param withPortfolio 
      */
-    public async privateGetSubaccountsGet (withPortfolio?: boolean, options: {headers: {[name: string]: string}} = {headers: {}}) : Promise<{ response: http.ClientResponse; body: object;  }> {
+    public async privateGetSubaccountsGet (withPortfolio?: boolean, options: {headers: {[name: string]: string}} = {headers: {}}) : Promise<{ response: http.IncomingMessage; body: object;  }> {
         const localVarPath = this.basePath + '/private/get_subaccounts';
         let localVarQueryParameters: any = {};
         let localVarHeaderParams: any = (<any>Object).assign({}, this.defaultHeaders);
@@ -2302,7 +2302,7 @@ export class PrivateApi {
                 localVarRequestOptions.form = localVarFormParams;
             }
         }
-        return new Promise<{ response: http.ClientResponse; body: object;  }>((resolve, reject) => {
+        return new Promise<{ response: http.IncomingMessage; body: object;  }>((resolve, reject) => {
             localVarRequest(localVarRequestOptions, (error, response, body) => {
                 if (error) {
                     reject(error);
@@ -2324,7 +2324,7 @@ export class PrivateApi {
      * @param count Number of requested items, default - &#x60;10&#x60;
      * @param offset The offset for pagination, default - &#x60;0&#x60;
      */
-    public async privateGetTransfersGet (currency: 'BTC' | 'ETH', count?: number, offset?: number, options: {headers: {[name: string]: string}} = {headers: {}}) : Promise<{ response: http.ClientResponse; body: object;  }> {
+    public async privateGetTransfersGet (currency: 'BTC' | 'ETH', count?: number, offset?: number, options: {headers: {[name: string]: string}} = {headers: {}}) : Promise<{ response: http.IncomingMessage; body: object;  }> {
         const localVarPath = this.basePath + '/private/get_transfers';
         let localVarQueryParameters: any = {};
         let localVarHeaderParams: any = (<any>Object).assign({}, this.defaultHeaders);
@@ -2371,7 +2371,7 @@ export class PrivateApi {
                 localVarRequestOptions.form = localVarFormParams;
             }
         }
-        return new Promise<{ response: http.ClientResponse; body: object;  }>((resolve, reject) => {
+        return new Promise<{ response: http.IncomingMessage; body: object;  }>((resolve, reject) => {
             localVarRequest(localVarRequestOptions, (error, response, body) => {
                 if (error) {
                     reject(error);
@@ -2397,7 +2397,7 @@ export class PrivateApi {
      * @param includeOld Include trades older than 7 days, default - &#x60;false&#x60;
      * @param sorting Direction of results sorting (&#x60;default&#x60; value means no sorting, results will be returned in order in which they left the database)
      */
-    public async privateGetUserTradesByCurrencyAndTimeGet (currency: 'BTC' | 'ETH', startTimestamp: number, endTimestamp: number, kind?: 'future' | 'option', count?: number, includeOld?: boolean, sorting?: 'asc' | 'desc' | 'default', options: {headers: {[name: string]: string}} = {headers: {}}) : Promise<{ response: http.ClientResponse; body: object;  }> {
+    public async privateGetUserTradesByCurrencyAndTimeGet (currency: 'BTC' | 'ETH', startTimestamp: number, endTimestamp: number, kind?: 'future' | 'option', count?: number, includeOld?: boolean, sorting?: 'asc' | 'desc' | 'default', options: {headers: {[name: string]: string}} = {headers: {}}) : Promise<{ response: http.IncomingMessage; body: object;  }> {
         const localVarPath = this.basePath + '/private/get_user_trades_by_currency_and_time';
         let localVarQueryParameters: any = {};
         let localVarHeaderParams: any = (<any>Object).assign({}, this.defaultHeaders);
@@ -2470,7 +2470,7 @@ export class PrivateApi {
                 localVarRequestOptions.form = localVarFormParams;
             }
         }
-        return new Promise<{ response: http.ClientResponse; body: object;  }>((resolve, reject) => {
+        return new Promise<{ response: http.IncomingMessage; body: object;  }>((resolve, reject) => {
             localVarRequest(localVarRequestOptions, (error, response, body) => {
                 if (error) {
                     reject(error);
@@ -2496,7 +2496,7 @@ export class PrivateApi {
      * @param includeOld Include trades older than 7 days, default - &#x60;false&#x60;
      * @param sorting Direction of results sorting (&#x60;default&#x60; value means no sorting, results will be returned in order in which they left the database)
      */
-    public async privateGetUserTradesByCurrencyGet (currency: 'BTC' | 'ETH', kind?: 'future' | 'option', startId?: string, endId?: string, count?: number, includeOld?: boolean, sorting?: 'asc' | 'desc' | 'default', options: {headers: {[name: string]: string}} = {headers: {}}) : Promise<{ response: http.ClientResponse; body: object;  }> {
+    public async privateGetUserTradesByCurrencyGet (currency: 'BTC' | 'ETH', kind?: 'future' | 'option', startId?: string, endId?: string, count?: number, includeOld?: boolean, sorting?: 'asc' | 'desc' | 'default', options: {headers: {[name: string]: string}} = {headers: {}}) : Promise<{ response: http.IncomingMessage; body: object;  }> {
         const localVarPath = this.basePath + '/private/get_user_trades_by_currency';
         let localVarQueryParameters: any = {};
         let localVarHeaderParams: any = (<any>Object).assign({}, this.defaultHeaders);
@@ -2559,7 +2559,7 @@ export class PrivateApi {
                 localVarRequestOptions.form = localVarFormParams;
             }
         }
-        return new Promise<{ response: http.ClientResponse; body: object;  }>((resolve, reject) => {
+        return new Promise<{ response: http.IncomingMessage; body: object;  }>((resolve, reject) => {
             localVarRequest(localVarRequestOptions, (error, response, body) => {
                 if (error) {
                     reject(error);
@@ -2584,7 +2584,7 @@ export class PrivateApi {
      * @param includeOld Include trades older than 7 days, default - &#x60;false&#x60;
      * @param sorting Direction of results sorting (&#x60;default&#x60; value means no sorting, results will be returned in order in which they left the database)
      */
-    public async privateGetUserTradesByInstrumentAndTimeGet (instrumentName: string, startTimestamp: number, endTimestamp: number, count?: number, includeOld?: boolean, sorting?: 'asc' | 'desc' | 'default', options: {headers: {[name: string]: string}} = {headers: {}}) : Promise<{ response: http.ClientResponse; body: object;  }> {
+    public async privateGetUserTradesByInstrumentAndTimeGet (instrumentName: string, startTimestamp: number, endTimestamp: number, count?: number, includeOld?: boolean, sorting?: 'asc' | 'desc' | 'default', options: {headers: {[name: string]: string}} = {headers: {}}) : Promise<{ response: http.IncomingMessage; body: object;  }> {
         const localVarPath = this.basePath + '/private/get_user_trades_by_instrument_and_time';
         let localVarQueryParameters: any = {};
         let localVarHeaderParams: any = (<any>Object).assign({}, this.defaultHeaders);
@@ -2653,7 +2653,7 @@ export class PrivateApi {
                 localVarRequestOptions.form = localVarFormParams;
             }
         }
-        return new Promise<{ response: http.ClientResponse; body: object;  }>((resolve, reject) => {
+        return new Promise<{ response: http.IncomingMessage; body: object;  }>((resolve, reject) => {
             localVarRequest(localVarRequestOptions, (error, response, body) => {
                 if (error) {
                     reject(error);
@@ -2678,7 +2678,7 @@ export class PrivateApi {
      * @param includeOld Include trades older than 7 days, default - &#x60;false&#x60;
      * @param sorting Direction of results sorting (&#x60;default&#x60; value means no sorting, results will be returned in order in which they left the database)
      */
-    public async privateGetUserTradesByInstrumentGet (instrumentName: string, startSeq?: number, endSeq?: number, count?: number, includeOld?: boolean, sorting?: 'asc' | 'desc' | 'default', options: {headers: {[name: string]: string}} = {headers: {}}) : Promise<{ response: http.ClientResponse; body: object;  }> {
+    public async privateGetUserTradesByInstrumentGet (instrumentName: string, startSeq?: number, endSeq?: number, count?: number, includeOld?: boolean, sorting?: 'asc' | 'desc' | 'default', options: {headers: {[name: string]: string}} = {headers: {}}) : Promise<{ response: http.IncomingMessage; body: object;  }> {
         const localVarPath = this.basePath + '/private/get_user_trades_by_instrument';
         let localVarQueryParameters: any = {};
         let localVarHeaderParams: any = (<any>Object).assign({}, this.defaultHeaders);
@@ -2737,7 +2737,7 @@ export class PrivateApi {
                 localVarRequestOptions.form = localVarFormParams;
             }
         }
-        return new Promise<{ response: http.ClientResponse; body: object;  }>((resolve, reject) => {
+        return new Promise<{ response: http.IncomingMessage; body: object;  }>((resolve, reject) => {
             localVarRequest(localVarRequestOptions, (error, response, body) => {
                 if (error) {
                     reject(error);
@@ -2758,7 +2758,7 @@ export class PrivateApi {
      * @param orderId The order id
      * @param sorting Direction of results sorting (&#x60;default&#x60; value means no sorting, results will be returned in order in which they left the database)
      */
-    public async privateGetUserTradesByOrderGet (orderId: string, sorting?: 'asc' | 'desc' | 'default', options: {headers: {[name: string]: string}} = {headers: {}}) : Promise<{ response: http.ClientResponse; body: object;  }> {
+    public async privateGetUserTradesByOrderGet (orderId: string, sorting?: 'asc' | 'desc' | 'default', options: {headers: {[name: string]: string}} = {headers: {}}) : Promise<{ response: http.IncomingMessage; body: object;  }> {
         const localVarPath = this.basePath + '/private/get_user_trades_by_order';
         let localVarQueryParameters: any = {};
         let localVarHeaderParams: any = (<any>Object).assign({}, this.defaultHeaders);
@@ -2801,7 +2801,7 @@ export class PrivateApi {
                 localVarRequestOptions.form = localVarFormParams;
             }
         }
-        return new Promise<{ response: http.ClientResponse; body: object;  }>((resolve, reject) => {
+        return new Promise<{ response: http.IncomingMessage; body: object;  }>((resolve, reject) => {
             localVarRequest(localVarRequestOptions, (error, response, body) => {
                 if (error) {
                     reject(error);
@@ -2823,7 +2823,7 @@ export class PrivateApi {
      * @param count Number of requested items, default - &#x60;10&#x60;
      * @param offset The offset for pagination, default - &#x60;0&#x60;
      */
-    public async privateGetWithdrawalsGet (currency: 'BTC' | 'ETH', count?: number, offset?: number, options: {headers: {[name: string]: string}} = {headers: {}}) : Promise<{ response: http.ClientResponse; body: object;  }> {
+    public async privateGetWithdrawalsGet (currency: 'BTC' | 'ETH', count?: number, offset?: number, options: {headers: {[name: string]: string}} = {headers: {}}) : Promise<{ response: http.IncomingMessage; body: object;  }> {
         const localVarPath = this.basePath + '/private/get_withdrawals';
         let localVarQueryParameters: any = {};
         let localVarHeaderParams: any = (<any>Object).assign({}, this.defaultHeaders);
@@ -2870,7 +2870,7 @@ export class PrivateApi {
                 localVarRequestOptions.form = localVarFormParams;
             }
         }
-        return new Promise<{ response: http.ClientResponse; body: object;  }>((resolve, reject) => {
+        return new Promise<{ response: http.IncomingMessage; body: object;  }>((resolve, reject) => {
             localVarRequest(localVarRequestOptions, (error, response, body) => {
                 if (error) {
                     reject(error);
@@ -2893,7 +2893,7 @@ export class PrivateApi {
      * @param address Address in currency format, it must be in address book
      * @param tfa TFA code, required when TFA is enabled for current account
      */
-    public async privateRemoveFromAddressBookGet (currency: 'BTC' | 'ETH', type: 'transfer' | 'withdrawal', address: string, tfa?: string, options: {headers: {[name: string]: string}} = {headers: {}}) : Promise<{ response: http.ClientResponse; body: object;  }> {
+    public async privateRemoveFromAddressBookGet (currency: 'BTC' | 'ETH', type: 'transfer' | 'withdrawal', address: string, tfa?: string, options: {headers: {[name: string]: string}} = {headers: {}}) : Promise<{ response: http.IncomingMessage; body: object;  }> {
         const localVarPath = this.basePath + '/private/remove_from_address_book';
         let localVarQueryParameters: any = {};
         let localVarHeaderParams: any = (<any>Object).assign({}, this.defaultHeaders);
@@ -2954,7 +2954,7 @@ export class PrivateApi {
                 localVarRequestOptions.form = localVarFormParams;
             }
         }
-        return new Promise<{ response: http.ClientResponse; body: object;  }>((resolve, reject) => {
+        return new Promise<{ response: http.IncomingMessage; body: object;  }>((resolve, reject) => {
             localVarRequest(localVarRequestOptions, (error, response, body) => {
                 if (error) {
                     reject(error);
@@ -2985,7 +2985,7 @@ export class PrivateApi {
      * @param trigger Defines trigger type, required for &#x60;\&quot;stop_limit\&quot;&#x60; order type
      * @param advanced Advanced option order type. (Only for options)
      */
-    public async privateSellGet (instrumentName: string, amount: number, type?: 'limit' | 'stop_limit' | 'market' | 'stop_market', label?: string, price?: number, timeInForce?: 'good_til_cancelled' | 'fill_or_kill' | 'immediate_or_cancel', maxShow?: number, postOnly?: boolean, reduceOnly?: boolean, stopPrice?: number, trigger?: 'index_price' | 'mark_price' | 'last_price', advanced?: 'usd' | 'implv', options: {headers: {[name: string]: string}} = {headers: {}}) : Promise<{ response: http.ClientResponse; body: object;  }> {
+    public async privateSellGet (instrumentName: string, amount: number, type?: 'limit' | 'stop_limit' | 'market' | 'stop_market', label?: string, price?: number, timeInForce?: 'good_til_cancelled' | 'fill_or_kill' | 'immediate_or_cancel', maxShow?: number, postOnly?: boolean, reduceOnly?: boolean, stopPrice?: number, trigger?: 'index_price' | 'mark_price' | 'last_price', advanced?: 'usd' | 'implv', options: {headers: {[name: string]: string}} = {headers: {}}) : Promise<{ response: http.IncomingMessage; body: object;  }> {
         const localVarPath = this.basePath + '/private/sell';
         let localVarQueryParameters: any = {};
         let localVarHeaderParams: any = (<any>Object).assign({}, this.defaultHeaders);
@@ -3073,7 +3073,7 @@ export class PrivateApi {
                 localVarRequestOptions.form = localVarFormParams;
             }
         }
-        return new Promise<{ response: http.ClientResponse; body: object;  }>((resolve, reject) => {
+        return new Promise<{ response: http.IncomingMessage; body: object;  }>((resolve, reject) => {
             localVarRequest(localVarRequestOptions, (error, response, body) => {
                 if (error) {
                     reject(error);
@@ -3093,7 +3093,7 @@ export class PrivateApi {
      * @summary Marks an announcement as read, so it will not be shown in `get_new_announcements`.
      * @param announcementId the ID of the announcement
      */
-    public async privateSetAnnouncementAsReadGet (announcementId: number, options: {headers: {[name: string]: string}} = {headers: {}}) : Promise<{ response: http.ClientResponse; body: object;  }> {
+    public async privateSetAnnouncementAsReadGet (announcementId: number, options: {headers: {[name: string]: string}} = {headers: {}}) : Promise<{ response: http.IncomingMessage; body: object;  }> {
         const localVarPath = this.basePath + '/private/set_announcement_as_read';
         let localVarQueryParameters: any = {};
         let localVarHeaderParams: any = (<any>Object).assign({}, this.defaultHeaders);
@@ -3132,7 +3132,7 @@ export class PrivateApi {
                 localVarRequestOptions.form = localVarFormParams;
             }
         }
-        return new Promise<{ response: http.ClientResponse; body: object;  }>((resolve, reject) => {
+        return new Promise<{ response: http.IncomingMessage; body: object;  }>((resolve, reject) => {
             localVarRequest(localVarRequestOptions, (error, response, body) => {
                 if (error) {
                     reject(error);
@@ -3153,7 +3153,7 @@ export class PrivateApi {
      * @param sid The user id for the subaccount
      * @param email The email address for the subaccount
      */
-    public async privateSetEmailForSubaccountGet (sid: number, email: string, options: {headers: {[name: string]: string}} = {headers: {}}) : Promise<{ response: http.ClientResponse; body: object;  }> {
+    public async privateSetEmailForSubaccountGet (sid: number, email: string, options: {headers: {[name: string]: string}} = {headers: {}}) : Promise<{ response: http.IncomingMessage; body: object;  }> {
         const localVarPath = this.basePath + '/private/set_email_for_subaccount';
         let localVarQueryParameters: any = {};
         let localVarHeaderParams: any = (<any>Object).assign({}, this.defaultHeaders);
@@ -3201,7 +3201,7 @@ export class PrivateApi {
                 localVarRequestOptions.form = localVarFormParams;
             }
         }
-        return new Promise<{ response: http.ClientResponse; body: object;  }>((resolve, reject) => {
+        return new Promise<{ response: http.IncomingMessage; body: object;  }>((resolve, reject) => {
             localVarRequest(localVarRequestOptions, (error, response, body) => {
                 if (error) {
                     reject(error);
@@ -3221,7 +3221,7 @@ export class PrivateApi {
      * @summary Changes the language to be used for emails.
      * @param language The abbreviated language name. Valid values include &#x60;\&quot;en\&quot;&#x60;, &#x60;\&quot;ko\&quot;&#x60;, &#x60;\&quot;zh\&quot;&#x60;
      */
-    public async privateSetEmailLanguageGet (language: string, options: {headers: {[name: string]: string}} = {headers: {}}) : Promise<{ response: http.ClientResponse; body: object;  }> {
+    public async privateSetEmailLanguageGet (language: string, options: {headers: {[name: string]: string}} = {headers: {}}) : Promise<{ response: http.IncomingMessage; body: object;  }> {
         const localVarPath = this.basePath + '/private/set_email_language';
         let localVarQueryParameters: any = {};
         let localVarHeaderParams: any = (<any>Object).assign({}, this.defaultHeaders);
@@ -3260,7 +3260,7 @@ export class PrivateApi {
                 localVarRequestOptions.form = localVarFormParams;
             }
         }
-        return new Promise<{ response: http.ClientResponse; body: object;  }>((resolve, reject) => {
+        return new Promise<{ response: http.IncomingMessage; body: object;  }>((resolve, reject) => {
             localVarRequest(localVarRequestOptions, (error, response, body) => {
                 if (error) {
                     reject(error);
@@ -3281,7 +3281,7 @@ export class PrivateApi {
      * @param sid The user id for the subaccount
      * @param password The password for the subaccount
      */
-    public async privateSetPasswordForSubaccountGet (sid: number, password: string, options: {headers: {[name: string]: string}} = {headers: {}}) : Promise<{ response: http.ClientResponse; body: object;  }> {
+    public async privateSetPasswordForSubaccountGet (sid: number, password: string, options: {headers: {[name: string]: string}} = {headers: {}}) : Promise<{ response: http.IncomingMessage; body: object;  }> {
         const localVarPath = this.basePath + '/private/set_password_for_subaccount';
         let localVarQueryParameters: any = {};
         let localVarHeaderParams: any = (<any>Object).assign({}, this.defaultHeaders);
@@ -3329,7 +3329,7 @@ export class PrivateApi {
                 localVarRequestOptions.form = localVarFormParams;
             }
         }
-        return new Promise<{ response: http.ClientResponse; body: object;  }>((resolve, reject) => {
+        return new Promise<{ response: http.IncomingMessage; body: object;  }>((resolve, reject) => {
             localVarRequest(localVarRequestOptions, (error, response, body) => {
                 if (error) {
                     reject(error);
@@ -3351,7 +3351,7 @@ export class PrivateApi {
      * @param amount Amount of funds to be transferred
      * @param destination Id of destination subaccount
      */
-    public async privateSubmitTransferToSubaccountGet (currency: 'BTC' | 'ETH', amount: number, destination: number, options: {headers: {[name: string]: string}} = {headers: {}}) : Promise<{ response: http.ClientResponse; body: object;  }> {
+    public async privateSubmitTransferToSubaccountGet (currency: 'BTC' | 'ETH', amount: number, destination: number, options: {headers: {[name: string]: string}} = {headers: {}}) : Promise<{ response: http.IncomingMessage; body: object;  }> {
         const localVarPath = this.basePath + '/private/submit_transfer_to_subaccount';
         let localVarQueryParameters: any = {};
         let localVarHeaderParams: any = (<any>Object).assign({}, this.defaultHeaders);
@@ -3408,7 +3408,7 @@ export class PrivateApi {
                 localVarRequestOptions.form = localVarFormParams;
             }
         }
-        return new Promise<{ response: http.ClientResponse; body: object;  }>((resolve, reject) => {
+        return new Promise<{ response: http.IncomingMessage; body: object;  }>((resolve, reject) => {
             localVarRequest(localVarRequestOptions, (error, response, body) => {
                 if (error) {
                     reject(error);
@@ -3431,7 +3431,7 @@ export class PrivateApi {
      * @param destination Destination address from address book
      * @param tfa TFA code, required when TFA is enabled for current account
      */
-    public async privateSubmitTransferToUserGet (currency: 'BTC' | 'ETH', amount: number, destination: string, tfa?: string, options: {headers: {[name: string]: string}} = {headers: {}}) : Promise<{ response: http.ClientResponse; body: object;  }> {
+    public async privateSubmitTransferToUserGet (currency: 'BTC' | 'ETH', amount: number, destination: string, tfa?: string, options: {headers: {[name: string]: string}} = {headers: {}}) : Promise<{ response: http.IncomingMessage; body: object;  }> {
         const localVarPath = this.basePath + '/private/submit_transfer_to_user';
         let localVarQueryParameters: any = {};
         let localVarHeaderParams: any = (<any>Object).assign({}, this.defaultHeaders);
@@ -3492,7 +3492,7 @@ export class PrivateApi {
                 localVarRequestOptions.form = localVarFormParams;
             }
         }
-        return new Promise<{ response: http.ClientResponse; body: object;  }>((resolve, reject) => {
+        return new Promise<{ response: http.IncomingMessage; body: object;  }>((resolve, reject) => {
             localVarRequest(localVarRequestOptions, (error, response, body) => {
                 if (error) {
                     reject(error);
@@ -3513,7 +3513,7 @@ export class PrivateApi {
      * @param currency The currency symbol
      * @param state 
      */
-    public async privateToggleDepositAddressCreationGet (currency: 'BTC' | 'ETH', state: boolean, options: {headers: {[name: string]: string}} = {headers: {}}) : Promise<{ response: http.ClientResponse; body: object;  }> {
+    public async privateToggleDepositAddressCreationGet (currency: 'BTC' | 'ETH', state: boolean, options: {headers: {[name: string]: string}} = {headers: {}}) : Promise<{ response: http.IncomingMessage; body: object;  }> {
         const localVarPath = this.basePath + '/private/toggle_deposit_address_creation';
         let localVarQueryParameters: any = {};
         let localVarHeaderParams: any = (<any>Object).assign({}, this.defaultHeaders);
@@ -3561,7 +3561,7 @@ export class PrivateApi {
                 localVarRequestOptions.form = localVarFormParams;
             }
         }
-        return new Promise<{ response: http.ClientResponse; body: object;  }>((resolve, reject) => {
+        return new Promise<{ response: http.IncomingMessage; body: object;  }>((resolve, reject) => {
             localVarRequest(localVarRequestOptions, (error, response, body) => {
                 if (error) {
                     reject(error);
@@ -3582,7 +3582,7 @@ export class PrivateApi {
      * @param sid The user id for the subaccount
      * @param state enable (&#x60;true&#x60;) or disable (&#x60;false&#x60;) notifications
      */
-    public async privateToggleNotificationsFromSubaccountGet (sid: number, state: boolean, options: {headers: {[name: string]: string}} = {headers: {}}) : Promise<{ response: http.ClientResponse; body: object;  }> {
+    public async privateToggleNotificationsFromSubaccountGet (sid: number, state: boolean, options: {headers: {[name: string]: string}} = {headers: {}}) : Promise<{ response: http.IncomingMessage; body: object;  }> {
         const localVarPath = this.basePath + '/private/toggle_notifications_from_subaccount';
         let localVarQueryParameters: any = {};
         let localVarHeaderParams: any = (<any>Object).assign({}, this.defaultHeaders);
@@ -3630,7 +3630,7 @@ export class PrivateApi {
                 localVarRequestOptions.form = localVarFormParams;
             }
         }
-        return new Promise<{ response: http.ClientResponse; body: object;  }>((resolve, reject) => {
+        return new Promise<{ response: http.IncomingMessage; body: object;  }>((resolve, reject) => {
             localVarRequest(localVarRequestOptions, (error, response, body) => {
                 if (error) {
                     reject(error);
@@ -3651,7 +3651,7 @@ export class PrivateApi {
      * @param sid The user id for the subaccount
      * @param state enable or disable login.
      */
-    public async privateToggleSubaccountLoginGet (sid: number, state: 'enable' | 'disable', options: {headers: {[name: string]: string}} = {headers: {}}) : Promise<{ response: http.ClientResponse; body: object;  }> {
+    public async privateToggleSubaccountLoginGet (sid: number, state: 'enable' | 'disable', options: {headers: {[name: string]: string}} = {headers: {}}) : Promise<{ response: http.IncomingMessage; body: object;  }> {
         const localVarPath = this.basePath + '/private/toggle_subaccount_login';
         let localVarQueryParameters: any = {};
         let localVarHeaderParams: any = (<any>Object).assign({}, this.defaultHeaders);
@@ -3699,7 +3699,7 @@ export class PrivateApi {
                 localVarRequestOptions.form = localVarFormParams;
             }
         }
-        return new Promise<{ response: http.ClientResponse; body: object;  }>((resolve, reject) => {
+        return new Promise<{ response: http.IncomingMessage; body: object;  }>((resolve, reject) => {
             localVarRequest(localVarRequestOptions, (error, response, body) => {
                 if (error) {
                     reject(error);
@@ -3723,7 +3723,7 @@ export class PrivateApi {
      * @param priority Withdrawal priority, optional for BTC, default: &#x60;high&#x60;
      * @param tfa TFA code, required when TFA is enabled for current account
      */
-    public async privateWithdrawGet (currency: 'BTC' | 'ETH', address: string, amount: number, priority?: 'insane' | 'extreme_high' | 'very_high' | 'high' | 'mid' | 'low' | 'very_low', tfa?: string, options: {headers: {[name: string]: string}} = {headers: {}}) : Promise<{ response: http.ClientResponse; body: object;  }> {
+    public async privateWithdrawGet (currency: 'BTC' | 'ETH', address: string, amount: number, priority?: 'insane' | 'extreme_high' | 'very_high' | 'high' | 'mid' | 'low' | 'very_low', tfa?: string, options: {headers: {[name: string]: string}} = {headers: {}}) : Promise<{ response: http.IncomingMessage; body: object;  }> {
         const localVarPath = this.basePath + '/private/withdraw';
         let localVarQueryParameters: any = {};
         let localVarHeaderParams: any = (<any>Object).assign({}, this.defaultHeaders);
@@ -3788,7 +3788,7 @@ export class PrivateApi {
                 localVarRequestOptions.form = localVarFormParams;
             }
         }
-        return new Promise<{ response: http.ClientResponse; body: object;  }>((resolve, reject) => {
+        return new Promise<{ response: http.IncomingMessage; body: object;  }>((resolve, reject) => {
             localVarRequest(localVarRequestOptions, (error, response, body) => {
                 if (error) {
                     reject(error);

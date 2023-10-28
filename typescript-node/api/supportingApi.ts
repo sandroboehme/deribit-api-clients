@@ -84,7 +84,7 @@ export class SupportingApi {
      * 
      * @summary Retrieves the current time (in milliseconds). This API endpoint can be used to check the clock skew between your software and Deribit\'s systems.
      */
-    public async publicGetTimeGet (options: {headers: {[name: string]: string}} = {headers: {}}) : Promise<{ response: http.ClientResponse; body: object;  }> {
+    public async publicGetTimeGet (options: {headers: {[name: string]: string}} = {headers: {}}) : Promise<{ response: http.IncomingMessage; body: object;  }> {
         const localVarPath = this.basePath + '/public/get_time';
         let localVarQueryParameters: any = {};
         let localVarHeaderParams: any = (<any>Object).assign({}, this.defaultHeaders);
@@ -114,7 +114,7 @@ export class SupportingApi {
                 localVarRequestOptions.form = localVarFormParams;
             }
         }
-        return new Promise<{ response: http.ClientResponse; body: object;  }>((resolve, reject) => {
+        return new Promise<{ response: http.IncomingMessage; body: object;  }>((resolve, reject) => {
             localVarRequest(localVarRequestOptions, (error, response, body) => {
                 if (error) {
                     reject(error);
@@ -134,7 +134,7 @@ export class SupportingApi {
      * @summary Tests the connection to the API server, and returns its version. You can use this to make sure the API is reachable, and matches the expected version.
      * @param expectedResult The value \&quot;exception\&quot; will trigger an error response. This may be useful for testing wrapper libraries.
      */
-    public async publicTestGet (expectedResult?: 'exception', options: {headers: {[name: string]: string}} = {headers: {}}) : Promise<{ response: http.ClientResponse; body: object;  }> {
+    public async publicTestGet (expectedResult?: 'exception', options: {headers: {[name: string]: string}} = {headers: {}}) : Promise<{ response: http.IncomingMessage; body: object;  }> {
         const localVarPath = this.basePath + '/public/test';
         let localVarQueryParameters: any = {};
         let localVarHeaderParams: any = (<any>Object).assign({}, this.defaultHeaders);
@@ -168,7 +168,7 @@ export class SupportingApi {
                 localVarRequestOptions.form = localVarFormParams;
             }
         }
-        return new Promise<{ response: http.ClientResponse; body: object;  }>((resolve, reject) => {
+        return new Promise<{ response: http.IncomingMessage; body: object;  }>((resolve, reject) => {
             localVarRequest(localVarRequestOptions, (error, response, body) => {
                 if (error) {
                     reject(error);

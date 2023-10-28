@@ -89,7 +89,7 @@ export class InternalApi {
      * @param name Name of address book entry
      * @param tfa TFA code, required when TFA is enabled for current account
      */
-    public async privateAddToAddressBookGet (currency: 'BTC' | 'ETH', type: 'transfer' | 'withdrawal', address: string, name: string, tfa?: string, options: {headers: {[name: string]: string}} = {headers: {}}) : Promise<{ response: http.ClientResponse; body: object;  }> {
+    public async privateAddToAddressBookGet (currency: 'BTC' | 'ETH', type: 'transfer' | 'withdrawal', address: string, name: string, tfa?: string, options: {headers: {[name: string]: string}} = {headers: {}}) : Promise<{ response: http.IncomingMessage; body: object;  }> {
         const localVarPath = this.basePath + '/private/add_to_address_book';
         let localVarQueryParameters: any = {};
         let localVarHeaderParams: any = (<any>Object).assign({}, this.defaultHeaders);
@@ -159,7 +159,7 @@ export class InternalApi {
                 localVarRequestOptions.form = localVarFormParams;
             }
         }
-        return new Promise<{ response: http.ClientResponse; body: object;  }>((resolve, reject) => {
+        return new Promise<{ response: http.IncomingMessage; body: object;  }>((resolve, reject) => {
             localVarRequest(localVarRequestOptions, (error, response, body) => {
                 if (error) {
                     reject(error);
@@ -180,7 +180,7 @@ export class InternalApi {
      * @param password The password for the subaccount
      * @param code One time recovery code
      */
-    public async privateDisableTfaWithRecoveryCodeGet (password: string, code: string, options: {headers: {[name: string]: string}} = {headers: {}}) : Promise<{ response: http.ClientResponse; body: object;  }> {
+    public async privateDisableTfaWithRecoveryCodeGet (password: string, code: string, options: {headers: {[name: string]: string}} = {headers: {}}) : Promise<{ response: http.IncomingMessage; body: object;  }> {
         const localVarPath = this.basePath + '/private/disable_tfa_with_recovery_code';
         let localVarQueryParameters: any = {};
         let localVarHeaderParams: any = (<any>Object).assign({}, this.defaultHeaders);
@@ -228,7 +228,7 @@ export class InternalApi {
                 localVarRequestOptions.form = localVarFormParams;
             }
         }
-        return new Promise<{ response: http.ClientResponse; body: object;  }>((resolve, reject) => {
+        return new Promise<{ response: http.IncomingMessage; body: object;  }>((resolve, reject) => {
             localVarRequest(localVarRequestOptions, (error, response, body) => {
                 if (error) {
                     reject(error);
@@ -249,7 +249,7 @@ export class InternalApi {
      * @param currency The currency symbol
      * @param type Address book type
      */
-    public async privateGetAddressBookGet (currency: 'BTC' | 'ETH', type: 'transfer' | 'withdrawal', options: {headers: {[name: string]: string}} = {headers: {}}) : Promise<{ response: http.ClientResponse; body: object;  }> {
+    public async privateGetAddressBookGet (currency: 'BTC' | 'ETH', type: 'transfer' | 'withdrawal', options: {headers: {[name: string]: string}} = {headers: {}}) : Promise<{ response: http.IncomingMessage; body: object;  }> {
         const localVarPath = this.basePath + '/private/get_address_book';
         let localVarQueryParameters: any = {};
         let localVarHeaderParams: any = (<any>Object).assign({}, this.defaultHeaders);
@@ -297,7 +297,7 @@ export class InternalApi {
                 localVarRequestOptions.form = localVarFormParams;
             }
         }
-        return new Promise<{ response: http.ClientResponse; body: object;  }>((resolve, reject) => {
+        return new Promise<{ response: http.IncomingMessage; body: object;  }>((resolve, reject) => {
             localVarRequest(localVarRequestOptions, (error, response, body) => {
                 if (error) {
                     reject(error);
@@ -320,7 +320,7 @@ export class InternalApi {
      * @param address Address in currency format, it must be in address book
      * @param tfa TFA code, required when TFA is enabled for current account
      */
-    public async privateRemoveFromAddressBookGet (currency: 'BTC' | 'ETH', type: 'transfer' | 'withdrawal', address: string, tfa?: string, options: {headers: {[name: string]: string}} = {headers: {}}) : Promise<{ response: http.ClientResponse; body: object;  }> {
+    public async privateRemoveFromAddressBookGet (currency: 'BTC' | 'ETH', type: 'transfer' | 'withdrawal', address: string, tfa?: string, options: {headers: {[name: string]: string}} = {headers: {}}) : Promise<{ response: http.IncomingMessage; body: object;  }> {
         const localVarPath = this.basePath + '/private/remove_from_address_book';
         let localVarQueryParameters: any = {};
         let localVarHeaderParams: any = (<any>Object).assign({}, this.defaultHeaders);
@@ -381,7 +381,7 @@ export class InternalApi {
                 localVarRequestOptions.form = localVarFormParams;
             }
         }
-        return new Promise<{ response: http.ClientResponse; body: object;  }>((resolve, reject) => {
+        return new Promise<{ response: http.IncomingMessage; body: object;  }>((resolve, reject) => {
             localVarRequest(localVarRequestOptions, (error, response, body) => {
                 if (error) {
                     reject(error);
@@ -403,7 +403,7 @@ export class InternalApi {
      * @param amount Amount of funds to be transferred
      * @param destination Id of destination subaccount
      */
-    public async privateSubmitTransferToSubaccountGet (currency: 'BTC' | 'ETH', amount: number, destination: number, options: {headers: {[name: string]: string}} = {headers: {}}) : Promise<{ response: http.ClientResponse; body: object;  }> {
+    public async privateSubmitTransferToSubaccountGet (currency: 'BTC' | 'ETH', amount: number, destination: number, options: {headers: {[name: string]: string}} = {headers: {}}) : Promise<{ response: http.IncomingMessage; body: object;  }> {
         const localVarPath = this.basePath + '/private/submit_transfer_to_subaccount';
         let localVarQueryParameters: any = {};
         let localVarHeaderParams: any = (<any>Object).assign({}, this.defaultHeaders);
@@ -460,7 +460,7 @@ export class InternalApi {
                 localVarRequestOptions.form = localVarFormParams;
             }
         }
-        return new Promise<{ response: http.ClientResponse; body: object;  }>((resolve, reject) => {
+        return new Promise<{ response: http.IncomingMessage; body: object;  }>((resolve, reject) => {
             localVarRequest(localVarRequestOptions, (error, response, body) => {
                 if (error) {
                     reject(error);
@@ -483,7 +483,7 @@ export class InternalApi {
      * @param destination Destination address from address book
      * @param tfa TFA code, required when TFA is enabled for current account
      */
-    public async privateSubmitTransferToUserGet (currency: 'BTC' | 'ETH', amount: number, destination: string, tfa?: string, options: {headers: {[name: string]: string}} = {headers: {}}) : Promise<{ response: http.ClientResponse; body: object;  }> {
+    public async privateSubmitTransferToUserGet (currency: 'BTC' | 'ETH', amount: number, destination: string, tfa?: string, options: {headers: {[name: string]: string}} = {headers: {}}) : Promise<{ response: http.IncomingMessage; body: object;  }> {
         const localVarPath = this.basePath + '/private/submit_transfer_to_user';
         let localVarQueryParameters: any = {};
         let localVarHeaderParams: any = (<any>Object).assign({}, this.defaultHeaders);
@@ -544,7 +544,7 @@ export class InternalApi {
                 localVarRequestOptions.form = localVarFormParams;
             }
         }
-        return new Promise<{ response: http.ClientResponse; body: object;  }>((resolve, reject) => {
+        return new Promise<{ response: http.IncomingMessage; body: object;  }>((resolve, reject) => {
             localVarRequest(localVarRequestOptions, (error, response, body) => {
                 if (error) {
                     reject(error);
@@ -565,7 +565,7 @@ export class InternalApi {
      * @param currency The currency symbol
      * @param state 
      */
-    public async privateToggleDepositAddressCreationGet (currency: 'BTC' | 'ETH', state: boolean, options: {headers: {[name: string]: string}} = {headers: {}}) : Promise<{ response: http.ClientResponse; body: object;  }> {
+    public async privateToggleDepositAddressCreationGet (currency: 'BTC' | 'ETH', state: boolean, options: {headers: {[name: string]: string}} = {headers: {}}) : Promise<{ response: http.IncomingMessage; body: object;  }> {
         const localVarPath = this.basePath + '/private/toggle_deposit_address_creation';
         let localVarQueryParameters: any = {};
         let localVarHeaderParams: any = (<any>Object).assign({}, this.defaultHeaders);
@@ -613,7 +613,7 @@ export class InternalApi {
                 localVarRequestOptions.form = localVarFormParams;
             }
         }
-        return new Promise<{ response: http.ClientResponse; body: object;  }>((resolve, reject) => {
+        return new Promise<{ response: http.IncomingMessage; body: object;  }>((resolve, reject) => {
             localVarRequest(localVarRequestOptions, (error, response, body) => {
                 if (error) {
                     reject(error);
@@ -632,7 +632,7 @@ export class InternalApi {
      * 
      * @summary Get information to be displayed in the footer of the website.
      */
-    public async publicGetFooterGet (options: {headers: {[name: string]: string}} = {headers: {}}) : Promise<{ response: http.ClientResponse; body: object;  }> {
+    public async publicGetFooterGet (options: {headers: {[name: string]: string}} = {headers: {}}) : Promise<{ response: http.IncomingMessage; body: object;  }> {
         const localVarPath = this.basePath + '/public/get_footer';
         let localVarQueryParameters: any = {};
         let localVarHeaderParams: any = (<any>Object).assign({}, this.defaultHeaders);
@@ -662,7 +662,7 @@ export class InternalApi {
                 localVarRequestOptions.form = localVarFormParams;
             }
         }
-        return new Promise<{ response: http.ClientResponse; body: object;  }>((resolve, reject) => {
+        return new Promise<{ response: http.IncomingMessage; body: object;  }>((resolve, reject) => {
             localVarRequest(localVarRequestOptions, (error, response, body) => {
                 if (error) {
                     reject(error);
@@ -682,7 +682,7 @@ export class InternalApi {
      * @summary Retrives market prices and its implied volatility of options instruments
      * @param currency The currency symbol
      */
-    public async publicGetOptionMarkPricesGet (currency: 'BTC' | 'ETH', options: {headers: {[name: string]: string}} = {headers: {}}) : Promise<{ response: http.ClientResponse; body: object;  }> {
+    public async publicGetOptionMarkPricesGet (currency: 'BTC' | 'ETH', options: {headers: {[name: string]: string}} = {headers: {}}) : Promise<{ response: http.IncomingMessage; body: object;  }> {
         const localVarPath = this.basePath + '/public/get_option_mark_prices';
         let localVarQueryParameters: any = {};
         let localVarHeaderParams: any = (<any>Object).assign({}, this.defaultHeaders);
@@ -721,7 +721,7 @@ export class InternalApi {
                 localVarRequestOptions.form = localVarFormParams;
             }
         }
-        return new Promise<{ response: http.ClientResponse; body: object;  }>((resolve, reject) => {
+        return new Promise<{ response: http.IncomingMessage; body: object;  }>((resolve, reject) => {
             localVarRequest(localVarRequestOptions, (error, response, body) => {
                 if (error) {
                     reject(error);
@@ -743,7 +743,7 @@ export class InternalApi {
      * @param value Value to be checked
      * @param value2 Additional value to be compared with
      */
-    public async publicValidateFieldGet (field: string, value: string, value2?: string, options: {headers: {[name: string]: string}} = {headers: {}}) : Promise<{ response: http.ClientResponse; body: object;  }> {
+    public async publicValidateFieldGet (field: string, value: string, value2?: string, options: {headers: {[name: string]: string}} = {headers: {}}) : Promise<{ response: http.IncomingMessage; body: object;  }> {
         const localVarPath = this.basePath + '/public/validate_field';
         let localVarQueryParameters: any = {};
         let localVarHeaderParams: any = (<any>Object).assign({}, this.defaultHeaders);
@@ -795,7 +795,7 @@ export class InternalApi {
                 localVarRequestOptions.form = localVarFormParams;
             }
         }
-        return new Promise<{ response: http.ClientResponse; body: object;  }>((resolve, reject) => {
+        return new Promise<{ response: http.IncomingMessage; body: object;  }>((resolve, reject) => {
             localVarRequest(localVarRequestOptions, (error, response, body) => {
                 if (error) {
                     reject(error);

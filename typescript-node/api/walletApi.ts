@@ -89,7 +89,7 @@ export class WalletApi {
      * @param name Name of address book entry
      * @param tfa TFA code, required when TFA is enabled for current account
      */
-    public async privateAddToAddressBookGet (currency: 'BTC' | 'ETH', type: 'transfer' | 'withdrawal', address: string, name: string, tfa?: string, options: {headers: {[name: string]: string}} = {headers: {}}) : Promise<{ response: http.ClientResponse; body: object;  }> {
+    public async privateAddToAddressBookGet (currency: 'BTC' | 'ETH', type: 'transfer' | 'withdrawal', address: string, name: string, tfa?: string, options: {headers: {[name: string]: string}} = {headers: {}}) : Promise<{ response: http.IncomingMessage; body: object;  }> {
         const localVarPath = this.basePath + '/private/add_to_address_book';
         let localVarQueryParameters: any = {};
         let localVarHeaderParams: any = (<any>Object).assign({}, this.defaultHeaders);
@@ -159,7 +159,7 @@ export class WalletApi {
                 localVarRequestOptions.form = localVarFormParams;
             }
         }
-        return new Promise<{ response: http.ClientResponse; body: object;  }>((resolve, reject) => {
+        return new Promise<{ response: http.IncomingMessage; body: object;  }>((resolve, reject) => {
             localVarRequest(localVarRequestOptions, (error, response, body) => {
                 if (error) {
                     reject(error);
@@ -181,7 +181,7 @@ export class WalletApi {
      * @param id Id of transfer
      * @param tfa TFA code, required when TFA is enabled for current account
      */
-    public async privateCancelTransferByIdGet (currency: 'BTC' | 'ETH', id: number, tfa?: string, options: {headers: {[name: string]: string}} = {headers: {}}) : Promise<{ response: http.ClientResponse; body: object;  }> {
+    public async privateCancelTransferByIdGet (currency: 'BTC' | 'ETH', id: number, tfa?: string, options: {headers: {[name: string]: string}} = {headers: {}}) : Promise<{ response: http.IncomingMessage; body: object;  }> {
         const localVarPath = this.basePath + '/private/cancel_transfer_by_id';
         let localVarQueryParameters: any = {};
         let localVarHeaderParams: any = (<any>Object).assign({}, this.defaultHeaders);
@@ -233,7 +233,7 @@ export class WalletApi {
                 localVarRequestOptions.form = localVarFormParams;
             }
         }
-        return new Promise<{ response: http.ClientResponse; body: object;  }>((resolve, reject) => {
+        return new Promise<{ response: http.IncomingMessage; body: object;  }>((resolve, reject) => {
             localVarRequest(localVarRequestOptions, (error, response, body) => {
                 if (error) {
                     reject(error);
@@ -254,7 +254,7 @@ export class WalletApi {
      * @param currency The currency symbol
      * @param id The withdrawal id
      */
-    public async privateCancelWithdrawalGet (currency: 'BTC' | 'ETH', id: number, options: {headers: {[name: string]: string}} = {headers: {}}) : Promise<{ response: http.ClientResponse; body: object;  }> {
+    public async privateCancelWithdrawalGet (currency: 'BTC' | 'ETH', id: number, options: {headers: {[name: string]: string}} = {headers: {}}) : Promise<{ response: http.IncomingMessage; body: object;  }> {
         const localVarPath = this.basePath + '/private/cancel_withdrawal';
         let localVarQueryParameters: any = {};
         let localVarHeaderParams: any = (<any>Object).assign({}, this.defaultHeaders);
@@ -302,7 +302,7 @@ export class WalletApi {
                 localVarRequestOptions.form = localVarFormParams;
             }
         }
-        return new Promise<{ response: http.ClientResponse; body: object;  }>((resolve, reject) => {
+        return new Promise<{ response: http.IncomingMessage; body: object;  }>((resolve, reject) => {
             localVarRequest(localVarRequestOptions, (error, response, body) => {
                 if (error) {
                     reject(error);
@@ -322,7 +322,7 @@ export class WalletApi {
      * @summary Creates deposit address in currency
      * @param currency The currency symbol
      */
-    public async privateCreateDepositAddressGet (currency: 'BTC' | 'ETH', options: {headers: {[name: string]: string}} = {headers: {}}) : Promise<{ response: http.ClientResponse; body: object;  }> {
+    public async privateCreateDepositAddressGet (currency: 'BTC' | 'ETH', options: {headers: {[name: string]: string}} = {headers: {}}) : Promise<{ response: http.IncomingMessage; body: object;  }> {
         const localVarPath = this.basePath + '/private/create_deposit_address';
         let localVarQueryParameters: any = {};
         let localVarHeaderParams: any = (<any>Object).assign({}, this.defaultHeaders);
@@ -361,7 +361,7 @@ export class WalletApi {
                 localVarRequestOptions.form = localVarFormParams;
             }
         }
-        return new Promise<{ response: http.ClientResponse; body: object;  }>((resolve, reject) => {
+        return new Promise<{ response: http.IncomingMessage; body: object;  }>((resolve, reject) => {
             localVarRequest(localVarRequestOptions, (error, response, body) => {
                 if (error) {
                     reject(error);
@@ -382,7 +382,7 @@ export class WalletApi {
      * @param currency The currency symbol
      * @param type Address book type
      */
-    public async privateGetAddressBookGet (currency: 'BTC' | 'ETH', type: 'transfer' | 'withdrawal', options: {headers: {[name: string]: string}} = {headers: {}}) : Promise<{ response: http.ClientResponse; body: object;  }> {
+    public async privateGetAddressBookGet (currency: 'BTC' | 'ETH', type: 'transfer' | 'withdrawal', options: {headers: {[name: string]: string}} = {headers: {}}) : Promise<{ response: http.IncomingMessage; body: object;  }> {
         const localVarPath = this.basePath + '/private/get_address_book';
         let localVarQueryParameters: any = {};
         let localVarHeaderParams: any = (<any>Object).assign({}, this.defaultHeaders);
@@ -430,7 +430,7 @@ export class WalletApi {
                 localVarRequestOptions.form = localVarFormParams;
             }
         }
-        return new Promise<{ response: http.ClientResponse; body: object;  }>((resolve, reject) => {
+        return new Promise<{ response: http.IncomingMessage; body: object;  }>((resolve, reject) => {
             localVarRequest(localVarRequestOptions, (error, response, body) => {
                 if (error) {
                     reject(error);
@@ -450,7 +450,7 @@ export class WalletApi {
      * @summary Retrieve deposit address for currency
      * @param currency The currency symbol
      */
-    public async privateGetCurrentDepositAddressGet (currency: 'BTC' | 'ETH', options: {headers: {[name: string]: string}} = {headers: {}}) : Promise<{ response: http.ClientResponse; body: object;  }> {
+    public async privateGetCurrentDepositAddressGet (currency: 'BTC' | 'ETH', options: {headers: {[name: string]: string}} = {headers: {}}) : Promise<{ response: http.IncomingMessage; body: object;  }> {
         const localVarPath = this.basePath + '/private/get_current_deposit_address';
         let localVarQueryParameters: any = {};
         let localVarHeaderParams: any = (<any>Object).assign({}, this.defaultHeaders);
@@ -489,7 +489,7 @@ export class WalletApi {
                 localVarRequestOptions.form = localVarFormParams;
             }
         }
-        return new Promise<{ response: http.ClientResponse; body: object;  }>((resolve, reject) => {
+        return new Promise<{ response: http.IncomingMessage; body: object;  }>((resolve, reject) => {
             localVarRequest(localVarRequestOptions, (error, response, body) => {
                 if (error) {
                     reject(error);
@@ -511,7 +511,7 @@ export class WalletApi {
      * @param count Number of requested items, default - &#x60;10&#x60;
      * @param offset The offset for pagination, default - &#x60;0&#x60;
      */
-    public async privateGetDepositsGet (currency: 'BTC' | 'ETH', count?: number, offset?: number, options: {headers: {[name: string]: string}} = {headers: {}}) : Promise<{ response: http.ClientResponse; body: object;  }> {
+    public async privateGetDepositsGet (currency: 'BTC' | 'ETH', count?: number, offset?: number, options: {headers: {[name: string]: string}} = {headers: {}}) : Promise<{ response: http.IncomingMessage; body: object;  }> {
         const localVarPath = this.basePath + '/private/get_deposits';
         let localVarQueryParameters: any = {};
         let localVarHeaderParams: any = (<any>Object).assign({}, this.defaultHeaders);
@@ -558,7 +558,7 @@ export class WalletApi {
                 localVarRequestOptions.form = localVarFormParams;
             }
         }
-        return new Promise<{ response: http.ClientResponse; body: object;  }>((resolve, reject) => {
+        return new Promise<{ response: http.IncomingMessage; body: object;  }>((resolve, reject) => {
             localVarRequest(localVarRequestOptions, (error, response, body) => {
                 if (error) {
                     reject(error);
@@ -580,7 +580,7 @@ export class WalletApi {
      * @param count Number of requested items, default - &#x60;10&#x60;
      * @param offset The offset for pagination, default - &#x60;0&#x60;
      */
-    public async privateGetTransfersGet (currency: 'BTC' | 'ETH', count?: number, offset?: number, options: {headers: {[name: string]: string}} = {headers: {}}) : Promise<{ response: http.ClientResponse; body: object;  }> {
+    public async privateGetTransfersGet (currency: 'BTC' | 'ETH', count?: number, offset?: number, options: {headers: {[name: string]: string}} = {headers: {}}) : Promise<{ response: http.IncomingMessage; body: object;  }> {
         const localVarPath = this.basePath + '/private/get_transfers';
         let localVarQueryParameters: any = {};
         let localVarHeaderParams: any = (<any>Object).assign({}, this.defaultHeaders);
@@ -627,7 +627,7 @@ export class WalletApi {
                 localVarRequestOptions.form = localVarFormParams;
             }
         }
-        return new Promise<{ response: http.ClientResponse; body: object;  }>((resolve, reject) => {
+        return new Promise<{ response: http.IncomingMessage; body: object;  }>((resolve, reject) => {
             localVarRequest(localVarRequestOptions, (error, response, body) => {
                 if (error) {
                     reject(error);
@@ -649,7 +649,7 @@ export class WalletApi {
      * @param count Number of requested items, default - &#x60;10&#x60;
      * @param offset The offset for pagination, default - &#x60;0&#x60;
      */
-    public async privateGetWithdrawalsGet (currency: 'BTC' | 'ETH', count?: number, offset?: number, options: {headers: {[name: string]: string}} = {headers: {}}) : Promise<{ response: http.ClientResponse; body: object;  }> {
+    public async privateGetWithdrawalsGet (currency: 'BTC' | 'ETH', count?: number, offset?: number, options: {headers: {[name: string]: string}} = {headers: {}}) : Promise<{ response: http.IncomingMessage; body: object;  }> {
         const localVarPath = this.basePath + '/private/get_withdrawals';
         let localVarQueryParameters: any = {};
         let localVarHeaderParams: any = (<any>Object).assign({}, this.defaultHeaders);
@@ -696,7 +696,7 @@ export class WalletApi {
                 localVarRequestOptions.form = localVarFormParams;
             }
         }
-        return new Promise<{ response: http.ClientResponse; body: object;  }>((resolve, reject) => {
+        return new Promise<{ response: http.IncomingMessage; body: object;  }>((resolve, reject) => {
             localVarRequest(localVarRequestOptions, (error, response, body) => {
                 if (error) {
                     reject(error);
@@ -719,7 +719,7 @@ export class WalletApi {
      * @param address Address in currency format, it must be in address book
      * @param tfa TFA code, required when TFA is enabled for current account
      */
-    public async privateRemoveFromAddressBookGet (currency: 'BTC' | 'ETH', type: 'transfer' | 'withdrawal', address: string, tfa?: string, options: {headers: {[name: string]: string}} = {headers: {}}) : Promise<{ response: http.ClientResponse; body: object;  }> {
+    public async privateRemoveFromAddressBookGet (currency: 'BTC' | 'ETH', type: 'transfer' | 'withdrawal', address: string, tfa?: string, options: {headers: {[name: string]: string}} = {headers: {}}) : Promise<{ response: http.IncomingMessage; body: object;  }> {
         const localVarPath = this.basePath + '/private/remove_from_address_book';
         let localVarQueryParameters: any = {};
         let localVarHeaderParams: any = (<any>Object).assign({}, this.defaultHeaders);
@@ -780,7 +780,7 @@ export class WalletApi {
                 localVarRequestOptions.form = localVarFormParams;
             }
         }
-        return new Promise<{ response: http.ClientResponse; body: object;  }>((resolve, reject) => {
+        return new Promise<{ response: http.IncomingMessage; body: object;  }>((resolve, reject) => {
             localVarRequest(localVarRequestOptions, (error, response, body) => {
                 if (error) {
                     reject(error);
@@ -802,7 +802,7 @@ export class WalletApi {
      * @param amount Amount of funds to be transferred
      * @param destination Id of destination subaccount
      */
-    public async privateSubmitTransferToSubaccountGet (currency: 'BTC' | 'ETH', amount: number, destination: number, options: {headers: {[name: string]: string}} = {headers: {}}) : Promise<{ response: http.ClientResponse; body: object;  }> {
+    public async privateSubmitTransferToSubaccountGet (currency: 'BTC' | 'ETH', amount: number, destination: number, options: {headers: {[name: string]: string}} = {headers: {}}) : Promise<{ response: http.IncomingMessage; body: object;  }> {
         const localVarPath = this.basePath + '/private/submit_transfer_to_subaccount';
         let localVarQueryParameters: any = {};
         let localVarHeaderParams: any = (<any>Object).assign({}, this.defaultHeaders);
@@ -859,7 +859,7 @@ export class WalletApi {
                 localVarRequestOptions.form = localVarFormParams;
             }
         }
-        return new Promise<{ response: http.ClientResponse; body: object;  }>((resolve, reject) => {
+        return new Promise<{ response: http.IncomingMessage; body: object;  }>((resolve, reject) => {
             localVarRequest(localVarRequestOptions, (error, response, body) => {
                 if (error) {
                     reject(error);
@@ -882,7 +882,7 @@ export class WalletApi {
      * @param destination Destination address from address book
      * @param tfa TFA code, required when TFA is enabled for current account
      */
-    public async privateSubmitTransferToUserGet (currency: 'BTC' | 'ETH', amount: number, destination: string, tfa?: string, options: {headers: {[name: string]: string}} = {headers: {}}) : Promise<{ response: http.ClientResponse; body: object;  }> {
+    public async privateSubmitTransferToUserGet (currency: 'BTC' | 'ETH', amount: number, destination: string, tfa?: string, options: {headers: {[name: string]: string}} = {headers: {}}) : Promise<{ response: http.IncomingMessage; body: object;  }> {
         const localVarPath = this.basePath + '/private/submit_transfer_to_user';
         let localVarQueryParameters: any = {};
         let localVarHeaderParams: any = (<any>Object).assign({}, this.defaultHeaders);
@@ -943,7 +943,7 @@ export class WalletApi {
                 localVarRequestOptions.form = localVarFormParams;
             }
         }
-        return new Promise<{ response: http.ClientResponse; body: object;  }>((resolve, reject) => {
+        return new Promise<{ response: http.IncomingMessage; body: object;  }>((resolve, reject) => {
             localVarRequest(localVarRequestOptions, (error, response, body) => {
                 if (error) {
                     reject(error);
@@ -964,7 +964,7 @@ export class WalletApi {
      * @param currency The currency symbol
      * @param state 
      */
-    public async privateToggleDepositAddressCreationGet (currency: 'BTC' | 'ETH', state: boolean, options: {headers: {[name: string]: string}} = {headers: {}}) : Promise<{ response: http.ClientResponse; body: object;  }> {
+    public async privateToggleDepositAddressCreationGet (currency: 'BTC' | 'ETH', state: boolean, options: {headers: {[name: string]: string}} = {headers: {}}) : Promise<{ response: http.IncomingMessage; body: object;  }> {
         const localVarPath = this.basePath + '/private/toggle_deposit_address_creation';
         let localVarQueryParameters: any = {};
         let localVarHeaderParams: any = (<any>Object).assign({}, this.defaultHeaders);
@@ -1012,7 +1012,7 @@ export class WalletApi {
                 localVarRequestOptions.form = localVarFormParams;
             }
         }
-        return new Promise<{ response: http.ClientResponse; body: object;  }>((resolve, reject) => {
+        return new Promise<{ response: http.IncomingMessage; body: object;  }>((resolve, reject) => {
             localVarRequest(localVarRequestOptions, (error, response, body) => {
                 if (error) {
                     reject(error);
@@ -1036,7 +1036,7 @@ export class WalletApi {
      * @param priority Withdrawal priority, optional for BTC, default: &#x60;high&#x60;
      * @param tfa TFA code, required when TFA is enabled for current account
      */
-    public async privateWithdrawGet (currency: 'BTC' | 'ETH', address: string, amount: number, priority?: 'insane' | 'extreme_high' | 'very_high' | 'high' | 'mid' | 'low' | 'very_low', tfa?: string, options: {headers: {[name: string]: string}} = {headers: {}}) : Promise<{ response: http.ClientResponse; body: object;  }> {
+    public async privateWithdrawGet (currency: 'BTC' | 'ETH', address: string, amount: number, priority?: 'insane' | 'extreme_high' | 'very_high' | 'high' | 'mid' | 'low' | 'very_low', tfa?: string, options: {headers: {[name: string]: string}} = {headers: {}}) : Promise<{ response: http.IncomingMessage; body: object;  }> {
         const localVarPath = this.basePath + '/private/withdraw';
         let localVarQueryParameters: any = {};
         let localVarHeaderParams: any = (<any>Object).assign({}, this.defaultHeaders);
@@ -1101,7 +1101,7 @@ export class WalletApi {
                 localVarRequestOptions.form = localVarFormParams;
             }
         }
-        return new Promise<{ response: http.ClientResponse; body: object;  }>((resolve, reject) => {
+        return new Promise<{ response: http.IncomingMessage; body: object;  }>((resolve, reject) => {
             localVarRequest(localVarRequestOptions, (error, response, body) => {
                 if (error) {
                     reject(error);
